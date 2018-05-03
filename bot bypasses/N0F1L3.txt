@@ -1,9 +1,9 @@
 N0F1L3 Botnet Logs Disclosure
 ==============================
+Source Code : https://github.com/1M50RRY/NoFile-stealer
 
 Discription : N0F1L3 Bot allows outsiders to view all logs collected after visiting particular folder.
 There's lack of encryption on logs and .htaccess file in folder 
 
-Bypass : hxxpx://botnetdemo.com/uploads
+Bypass : hxxpx://botnetdemo.com/uploads.
 
-thnaks me later :)!!

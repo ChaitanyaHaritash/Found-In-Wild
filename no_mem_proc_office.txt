@@ -1,0 +1,500 @@
+Small Cariculated list of libs aren't under any memory protection
+Which can be used to make ROP Chains and Extract gadgets to Craft exploits.
+
+Note: I mainly Focused on MS Office(2007 and 2010, ill add about 2016 and 2013 too gradually)
+Twitter : @bofheaded
+==============================================================================================
+Date : 8/1/2018
+==============================================================================================
+
+Windows 10 x64 - Office 2010 - WINWORD.EXE
+===========================================
+
+04f20000 0532f000 office               NO_SEH           *ASLR      office.dll
+05370000 05439000 wwintl               NO_SEH           *ASLR      wwintl.dll
+05450000 056b2000 MSOINTL              NO_SEH           *ASLR      MSOINTL.dll
+056d0000 09bfa000 MSORES               NO_SEH           *ASLR      MSORES.dll
+2f330000 2f48d000 WINWORD              /SafeSEH ON      *ASLR      C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE
+3f100000 3f411000 msgr3en              /SafeSEH ON  /GS       *DEP msgr3en.dll
+5b730000 5b7a6000 wow64win             /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64win.dll
+5b7b0000 5b7ba000 wow64cpu             /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64cpu.dll
+5b7c0000 5b811000 wow64                /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64.dll
+69220000 69374000 comsvcs              /SafeSEH ON  /GS *ASLR *DEP comsvcs.dll
+69380000 69514000 osppcext             /SafeSEH ON  /GS *ASLR *DEP osppcext.dll
+69520000 69754000 CoreUIComponents     /SafeSEH ON  /GS *ASLR *DEP CoreUIComponents.dll
+69760000 6999e000 d3d11                /SafeSEH ON  /GS *ASLR *DEP d3d11.dll
+699a0000 6ab80000 MSO                  /SafeSEH ON      *ASLR      MSO.dll
+6ab80000 6bf12000 oart                 /SafeSEH ON      *ASLR      oart.dll
+6bf20000 6d19a000 wwlib                /SafeSEH ON      *ASLR      wwlib.dll
+6dab0000 6db7e000 wuapi                /SafeSEH ON  /GS *ASLR *DEP wuapi.dll
+6db80000 6dbe7000 msvcp110_win         /SafeSEH ON  /GS *ASLR *DEP msvcp110_win.dll
+6dcc0000 6de2e000 WindowsCodecs        /SafeSEH ON  /GS *ASLR *DEP WindowsCodecs.dll
+6df70000 6dfad000 edputil              /SafeSEH ON  /GS *ASLR *DEP edputil.dll
+6e1a0000 6e1ba000 RMCLIENT             /SafeSEH ON  /GS *ASLR *DEP RMCLIENT.dll
+6e1c0000 6e2f4000 twinapi_appcore      /SafeSEH ON  /GS *ASLR *DEP twinapi.appcore.dll
+6e330000 6e369000 MSProof7             /SafeSEH ON      *ASLR      MSProof7.dll
+6e370000 6e3d9000 policymanager        /SafeSEH ON  /GS *ASLR *DEP policymanager.dll
+6e3e0000 6e42e000 thumbcache           /SafeSEH ON  /GS *ASLR *DEP thumbcache.dll
+6e430000 6e4bc000 CoreMessaging        /SafeSEH ON  /GS *ASLR *DEP CoreMessaging.dll
+6e4c0000 6e537000 TextInputFramework   /SafeSEH ON  /GS *ASLR *DEP TextInputFramework.dll
+6e540000 6e63e000 dcomp                /SafeSEH ON  /GS *ASLR *DEP dcomp.dll
+6e640000 6e6c6000 sxs                  /SafeSEH ON  /GS *ASLR *DEP sxs.dll
+6e6d0000 6e76e000 USP10                /SafeSEH ON  /GS *ASLR *DEP USP10.dll
+6e7a0000 6e7c2000 DEVOBJ               /SafeSEH ON  /GS *ASLR *DEP DEVOBJ.dll
+6e7d0000 6e80d000 STI                  /SafeSEH ON  /GS *ASLR *DEP STI.dll
+6e830000 6e88e000 msIso                /SafeSEH ON  /GS *ASLR *DEP msIso.dll
+6e9b0000 6e9bb000 wups                 /SafeSEH OFF /GS *ASLR *DEP wups.dll
+6e9c0000 6ea08000 DataExchange         /SafeSEH ON  /GS *ASLR *DEP DataExchange.dll
+6ea10000 6ea8d000 mscoreei             /SafeSEH ON  /GS *ASLR *DEP mscoreei.dll
+6eb50000 6eb80000 WinSCard             /SafeSEH ON  /GS *ASLR *DEP WinSCard.dll
+6eb80000 6ebd4000 mscoree              /SafeSEH ON  /GS *ASLR *DEP mscoree.dll
+6ed00000 6ed08000 SensApi              /SafeSEH ON  /GS *ASLR *DEP SensApi.dll
+6ed10000 6ee5f000 RICHED20             /SafeSEH ON      *ASLR      RICHED20.dll
+6ee60000 6ef1c000 msptls               /SafeSEH ON      *ASLR      msptls.dll
+6ef20000 6f0cb000 gfx                  /SafeSEH ON      *ASLR      gfx.dll
+6f0d0000 6f320000 AcGenral             /SafeSEH ON  /GS *ASLR *DEP AcGenral.dll
+6f370000 6f398000 NTMARTA              /SafeSEH ON  /GS *ASLR *DEP NTMARTA.dll
+6f3b0000 6f3b8000 FLTLIB               /SafeSEH OFF /GS *ASLR *DEP FLTLIB.DLL
+6f3c0000 6f3f6000 AEPIC                /SafeSEH ON  /GS *ASLR *DEP AEPIC.dll
+6f400000 6f416000 CLDAPI               /SafeSEH OFF /GS *ASLR *DEP CLDAPI.dll
+6f420000 6f43e000 GPAPI                /SafeSEH ON  /GS *ASLR *DEP GPAPI.dll
+6f440000 6f46f000 netprofm             /SafeSEH ON  /GS *ASLR *DEP netprofm.dll
+6f4a0000 6f56b000 WinTypes             /SafeSEH ON  /GS *ASLR *DEP WinTypes.dll
+6f570000 6f953000 msi                  /SafeSEH ON  /GS *ASLR *DEP msi.dll
+6f960000 6fb46000 MSXML6               /SafeSEH ON  /GS *ASLR *DEP MSXML6.dll
+6fb50000 6fb69000 MpOAV                /SafeSEH ON  /GS *ASLR *DEP MpOAV.dll
+6fb70000 6fb85000 samcli               /SafeSEH ON  /GS *ASLR *DEP samcli.dll
+6fb90000 6fb98000 wiatrace             /SafeSEH OFF /GS *ASLR *DEP wiatrace.dll
+6fba0000 6fba9000 npmproxy             /SafeSEH OFF /GS *ASLR *DEP npmproxy.dll
+6fbb0000 6fbd0000 osppc                /SafeSEH ON  /GS *ASLR *DEP osppc.dll
+6fbd0000 6fbf3000 srpapi               /SafeSEH ON  /GS *ASLR *DEP srpapi.dll
+6fc00000 6fc0f000 WTSAPI32             /SafeSEH ON  /GS *ASLR *DEP WTSAPI32.dll
+6fc10000 6fc16000 MSIMG32              NO_SEH       /GS *ASLR *DEP MSIMG32.dll
+6fc20000 6fc75000 NInput               /SafeSEH ON  /GS *ASLR *DEP NInput.dll
+6fc80000 6fd23000 MSVCR90              /SafeSEH ON  /GS *ASLR *DEP MSVCR90.dll
+6fd30000 6fd49000 MSACM32              /SafeSEH ON  /GS *ASLR *DEP MSACM32.dll
+6fd50000 6fd57000 DCIMAN32             /SafeSEH OFF /GS *ASLR *DEP DCIMAN32.dll
+6fd60000 6fdf3000 dxgi                 /SafeSEH ON  /GS *ASLR *DEP dxgi.dll
+6fe00000 6fe6c000 WINSPOOL             /SafeSEH ON  /GS *ASLR *DEP WINSPOOL.DRV
+6fe70000 6ff5a000 DDRAW                /SafeSEH ON  /GS *ASLR *DEP DDRAW.dll
+6ff60000 6ffe7000 mscms                /SafeSEH ON  /GS *ASLR *DEP mscms.dll
+6fff0000 7007e000 COMCTL32             /SafeSEH ON  /GS *ASLR *DEP COMCTL32.dll
+70080000 700f9000 AcSpecfc             /SafeSEH ON  /GS *ASLR *DEP AcSpecfc.dll
+70100000 7019a000 apphelp              /SafeSEH ON  /GS *ASLR *DEP apphelp.dll
+708a0000 708c3000 WINMMBASE            /SafeSEH ON  /GS *ASLR *DEP WINMMBASE.dll
+70a50000 70a74000 WINMM                /SafeSEH ON  /GS *ASLR *DEP WINMM.dll
+70a80000 70a97000 MPR                  /SafeSEH ON  /GS *ASLR *DEP MPR.dll
+70c70000 70e8a000 iertutil             /SafeSEH ON  /GS *ASLR *DEP iertutil.dll
+72420000 7259b000 PROPSYS              /SafeSEH ON  /GS *ASLR *DEP PROPSYS.dll
+725d0000 7267d000 WINHTTP              /SafeSEH ON  /GS *ASLR *DEP WINHTTP.dll
+72720000 72799000 UxTheme              /SafeSEH ON  /GS *ASLR *DEP UxTheme.dll
+727a0000 727c3000 dwmapi               /SafeSEH ON  /GS *ASLR *DEP dwmapi.dll
+727d0000 727f2000 USERENV              /SafeSEH ON  /GS *ASLR *DEP USERENV.dll
+72800000 72a11000 COMCTL32_72800000    /SafeSEH ON  /GS *ASLR *DEP COMCTL32.dll
+72a20000 72b8b000 gdiplus              /SafeSEH ON  /GS *ASLR *DEP gdiplus.dll
+72b90000 72b98000 VERSION              /SafeSEH OFF /GS *ASLR *DEP VERSION.dll
+72ba0000 72d2d000 urlmon               /SafeSEH ON  /GS *ASLR *DEP urlmon.dll
+73a30000 73a49000 bcrypt               /SafeSEH ON  /GS *ASLR *DEP bcrypt.dll
+73a50000 73a7f000 RSAENH               /SafeSEH ON  /GS *ASLR *DEP RSAENH.dll
+73a80000 73a93000 CRYPTSP              /SafeSEH ON  /GS *ASLR *DEP CRYPTSP.dll
+73b40000 73b70000 IPHLPAPI             /SafeSEH ON  /GS *ASLR *DEP IPHLPAPI.DLL
+740d0000 740da000 CRYPTBASE            NO_SEH       /GS *ASLR *DEP CRYPTBASE.dll
+740e0000 74100000 SspiCli              /SafeSEH ON  /GS *ASLR *DEP SspiCli.dll
+74100000 74217000 ucrtbase             /SafeSEH OFF /GS *ASLR *DEP ucrtbase.dll
+74220000 74277000 bcryptPrimitives     /SafeSEH OFF /GS *ASLR *DEP bcryptPrimitives.dll
+74280000 74846000 Windows_Storage      /SafeSEH ON  /GS *ASLR *DEP Windows.Storage.dll
+74850000 749c5000 USER32               /SafeSEH ON  /GS *ASLR *DEP USER32.dll
+749d0000 74b2f000 gdi32full            /SafeSEH ON  /GS *ASLR *DEP gdi32full.dll
+74b30000 74b52000 GDI32                NO_SEH       /GS *ASLR *DEP GDI32.dll
+74c50000 74c5e000 AppCore              /SafeSEH OFF /GS *ASLR *DEP AppCore.dll
+74c60000 74d1d000 msvcrt               /SafeSEH ON  /GS *ASLR *DEP msvcrt.dll
+74d20000 74d39000 imagehlp             /SafeSEH OFF /GS *ASLR *DEP imagehlp.dll
+74d40000 74dfe000 RPCRT4               /SafeSEH ON  /GS *ASLR *DEP RPCRT4.dll
+74e10000 74e55000 SHLWAPI              /SafeSEH ON  /GS *ASLR *DEP SHLWAPI.dll
+74e60000 74e85000 IMM32                /SafeSEH ON  /GS *ASLR *DEP IMM32.dll
+74e90000 74f12000 CLBCatQ              /SafeSEH ON  /GS *ASLR *DEP CLBCatQ.DLL
+74f20000 74f36000 win32u               NO_SEH       /GS *ASLR *DEP win32u.dll
+74f40000 75186000 combase              /SafeSEH ON  /GS *ASLR *DEP combase.dll
+75190000 75208000 ADVAPI32             /SafeSEH ON  /GS *ASLR *DEP ADVAPI32.dll
+75380000 753c3000 SECHOST              /SafeSEH ON  /GS *ASLR *DEP SECHOST.dll
+753d0000 76704000 SHELL32              /SafeSEH ON  /GS *ASLR *DEP SHELL32.dll
+76710000 7678c000 msvcp_win            /SafeSEH OFF /GS *ASLR *DEP msvcp_win.dll
+767f0000 768c0000 KERNEL32             /SafeSEH ON  /GS *ASLR *DEP KERNEL32.dll
+768c0000 768ce000 MSASN1               NO_SEH       /GS *ASLR *DEP MSASN1.dll
+768d0000 76aa7000 KERNELBASE           /SafeSEH ON  /GS *ASLR *DEP KERNELBASE.dll
+76ab0000 76af5000 POWRPROF             /SafeSEH ON  /GS *ASLR *DEP POWRPROF.dll
+76b00000 76b66000 WS2_32               /SafeSEH ON  /GS *ASLR *DEP WS2_32.dll
+76b80000 76bb8000 CFGMGR32             /SafeSEH ON  /GS *ASLR *DEP CFGMGR32.dll
+76bc0000 76c48000 SHCORE               /SafeSEH ON  /GS *ASLR *DEP SHCORE.dll
+76ca0000 76d74000 COMDLG32             /SafeSEH ON  /GS *ASLR *DEP COMDLG32.dll
+76d80000 76dde000 coml2                /SafeSEH ON  /GS *ASLR *DEP coml2.dll
+76de0000 76f24000 MSCTF                /SafeSEH ON  /GS *ASLR *DEP MSCTF.dll
+76f30000 770b2000 CRYPT32              /SafeSEH ON  /GS *ASLR *DEP CRYPT32.dll
+770c0000 770c7000 NSI                  NO_SEH       /GS *ASLR *DEP NSI.dll
+770d0000 771c7000 ole32                /SafeSEH ON  /GS *ASLR *DEP ole32.dll
+77600000 77693000 OLEAUT32             /SafeSEH ON  /GS *ASLR *DEP OLEAUT32.dll
+776a0000 776b4000 profapi              /SafeSEH ON  /GS *ASLR *DEP profapi.dll
+776c0000 7784c000 ntdll_776c0000       /SafeSEH OFF /GS *ASLR *DEP ntdll.dll
+55740000 55920000 ntdll                /SafeSEH OFF     *ASLR *DEP C:\Windows\SYSTEM32\ntdll.dll
+
+
+Windows 10 x64 - Office 2007 - WINWORD.EXE
+==========================================
+
+04ed0000 04fa7000 wwintl               NO_SEH           *ASLR      wwintl.dll
+05310000 05964000 msores               NO_SEH           *ASLR      msores.dll
+061f0000 06bcd000 msointl              NO_SEH           *ASLR      msointl.dll
+2f670000 2f6c7000 WINWORD              /SafeSEH ON      *ASLR      C:\Program Files (x86)\Microsoft Office\Office12\WINWORD.EXE
+54490000 54506000 wow64win             /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64win.dll
+54510000 5451a000 wow64cpu             /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64cpu.dll
+54520000 54571000 wow64                /SafeSEH OFF     *ASLR *DEP C:\Windows\System32\wow64.dll
+69be0000 69c67000 MSVCP80              /SafeSEH ON  /GS *ASLR *DEP MSVCP80.dll
+69c70000 69d26000 MSProof6             /SafeSEH ON      *ASLR      MSProof6.dll
+69d30000 69e2e000 dcomp                /SafeSEH ON  /GS *ASLR *DEP dcomp.dll
+69e30000 6a06e000 d3d11                /SafeSEH ON  /GS *ASLR *DEP d3d11.dll
+6a070000 6a0fc000 CoreMessaging        /SafeSEH ON  /GS *ASLR *DEP CoreMessaging.dll
+6a100000 6a334000 CoreUIComponents     /SafeSEH ON  /GS *ASLR *DEP CoreUIComponents.dll
+6a340000 6a35e000 GPAPI                /SafeSEH ON  /GS *ASLR *DEP GPAPI.dll
+6a360000 6a3a8000 DataExchange         /SafeSEH ON  /GS *ASLR *DEP DataExchange.dll
+6a3b0000 6a427000 TextInputFramework   /SafeSEH ON  /GS *ASLR *DEP TextInputFramework.dll
+6a430000 6a449000 MpOAV                /SafeSEH ON  /GS *ASLR *DEP MpOAV.dll
+6a450000 6a4d6000 sxs                  /SafeSEH ON  /GS *ASLR *DEP sxs.dll
+6a4e0000 6a5e9000 RICHED20             /SafeSEH OFF     *ASLR      RICHED20.dll
+6a5f0000 6a5f9000 npmproxy             /SafeSEH OFF /GS *ASLR *DEP npmproxy.dll
+6a600000 6a62f000 netprofm             /SafeSEH ON  /GS *ASLR *DEP netprofm.dll
+6a630000 6a6ad000 mscoreei             /SafeSEH ON  /GS *ASLR *DEP mscoreei.dll
+6a6b0000 6a704000 mscoree              /SafeSEH ON  /GS *ASLR *DEP mscoree.dll
+6a710000 6a7ca000 msptls               /SafeSEH ON      *ASLR      msptls.dll
+6a7d0000 6a7f3000 srpapi               /SafeSEH ON  /GS *ASLR *DEP srpapi.dll
+6a800000 6b818000 MSO                  /SafeSEH ON      *ASLR      MSO.dll
+6b820000 6c5a0000 oart                 /SafeSEH ON      *ASLR      oart.dll
+6c5a0000 6d64c000 wwlib                /SafeSEH ON      *ASLR      wwlib.dll
+6d650000 6d6eb000 MSVCR80              /SafeSEH ON  /GS *ASLR *DEP MSVCR80.dll
+6d6f0000 6d709000 MSACM32              /SafeSEH ON  /GS *ASLR *DEP MSACM32.dll
+6d710000 6d960000 AcGenral             /SafeSEH ON  /GS *ASLR *DEP AcGenral.dll
+6d960000 6d967000 DCIMAN32             /SafeSEH OFF /GS *ASLR *DEP DCIMAN32.dll
+6d970000 6da03000 dxgi                 /SafeSEH ON  /GS *ASLR *DEP dxgi.dll
+6da10000 6da7c000 WINSPOOL             /SafeSEH ON  /GS *ASLR *DEP WINSPOOL.DRV
+6da80000 6de63000 msi                  /SafeSEH ON  /GS *ASLR *DEP msi.dll
+6de70000 6df5a000 DDRAW                /SafeSEH ON  /GS *ASLR *DEP DDRAW.dll
+6df60000 6dfe7000 mscms                /SafeSEH ON  /GS *ASLR *DEP mscms.dll
+6dff0000 6e07e000 COMCTL32             /SafeSEH ON  /GS *ASLR *DEP COMCTL32.dll
+6e080000 6e0f9000 AcSpecfc             /SafeSEH ON  /GS *ASLR *DEP AcSpecfc.dll
+6ec50000 6ecea000 apphelp              /SafeSEH ON  /GS *ASLR *DEP apphelp.dll
+6ee30000 6ee6d000 edputil              /SafeSEH ON  /GS *ASLR *DEP edputil.dll
+6ee70000 6ee85000 samcli               /SafeSEH ON  /GS *ASLR *DEP samcli.dll
+6f080000 6f09a000 RMCLIENT             /SafeSEH ON  /GS *ASLR *DEP RMCLIENT.dll
+6f0a0000 6f1d4000 twinapi_appcore      /SafeSEH ON  /GS *ASLR *DEP twinapi.appcore.dll
+6f5f0000 6f618000 NTMARTA              /SafeSEH ON  /GS *ASLR *DEP NTMARTA.dll
+6f620000 6f628000 FLTLIB               /SafeSEH OFF /GS *ASLR *DEP FLTLIB.DLL
+6f630000 6f666000 AEPIC                /SafeSEH ON  /GS *ASLR *DEP AEPIC.dll
+6f670000 6f686000 CLDAPI               /SafeSEH OFF /GS *ASLR *DEP CLDAPI.dll
+6f6c0000 6f78b000 WinTypes             /SafeSEH ON  /GS *ASLR *DEP WinTypes.dll
+6feb0000 6fed3000 WINMMBASE            /SafeSEH ON  /GS *ASLR *DEP WINMMBASE.dll
+70140000 70164000 WINMM                /SafeSEH ON  /GS *ASLR *DEP WINMM.dll
+70260000 70277000 MPR                  /SafeSEH ON  /GS *ASLR *DEP MPR.dll
+70450000 7066a000 iertutil             /SafeSEH ON  /GS *ASLR *DEP iertutil.dll
+71a30000 71a52000 USERENV              /SafeSEH ON  /GS *ASLR *DEP USERENV.dll
+71c30000 71dab000 PROPSYS              /SafeSEH ON  /GS *ASLR *DEP PROPSYS.dll
+71f30000 71fa9000 UxTheme              /SafeSEH ON  /GS *ASLR *DEP UxTheme.dll
+71fb0000 71fd3000 dwmapi               /SafeSEH ON  /GS *ASLR *DEP dwmapi.dll
+72150000 72361000 COMCTL32_72150000    /SafeSEH ON  /GS *ASLR *DEP COMCTL32.dll
+72380000 72388000 VERSION              /SafeSEH OFF /GS *ASLR *DEP VERSION.dll
+72390000 7251d000 urlmon               /SafeSEH ON  /GS *ASLR *DEP urlmon.dll
+73210000 73229000 bcrypt               /SafeSEH ON  /GS *ASLR *DEP bcrypt.dll
+73260000 73273000 CRYPTSP              /SafeSEH ON  /GS *ASLR *DEP CRYPTSP.dll
+73320000 73350000 IPHLPAPI             /SafeSEH ON  /GS *ASLR *DEP IPHLPAPI.DLL
+738b0000 738ba000 CRYPTBASE            NO_SEH       /GS *ASLR *DEP CRYPTBASE.dll
+738c0000 738e0000 SspiCli              /SafeSEH ON  /GS *ASLR *DEP SspiCli.dll
+738e0000 73b26000 combase              /SafeSEH ON  /GS *ASLR *DEP combase.dll
+73cb0000 73d6d000 msvcrt               /SafeSEH ON  /GS *ASLR *DEP msvcrt.dll
+73d70000 73df2000 CLBCatQ              /SafeSEH ON  /GS *ASLR *DEP CLBCatQ.DLL
+73e00000 73e93000 OLEAUT32             /SafeSEH ON  /GS *ASLR *DEP OLEAUT32.dll
+742d0000 742e6000 win32u               NO_SEH       /GS *ASLR *DEP win32u.dll
+742f0000 74309000 imagehlp             /SafeSEH OFF /GS *ASLR *DEP imagehlp.dll
+74310000 743ce000 RPCRT4               /SafeSEH ON  /GS *ASLR *DEP RPCRT4.dll
+743d0000 74458000 SHCORE               /SafeSEH ON  /GS *ASLR *DEP SHCORE.dll
+74460000 744a5000 SHLWAPI              /SafeSEH ON  /GS *ASLR *DEP SHLWAPI.dll
+744b0000 745a7000 ole32                /SafeSEH ON  /GS *ASLR *DEP ole32.dll
+745c0000 745e5000 IMM32                /SafeSEH ON  /GS *ASLR *DEP IMM32.dll
+745f0000 74707000 ucrtbase             /SafeSEH OFF /GS *ASLR *DEP ucrtbase.dll
+74710000 74788000 ADVAPI32             /SafeSEH ON  /GS *ASLR *DEP ADVAPI32.dll
+74790000 74912000 CRYPT32              /SafeSEH ON  /GS *ASLR *DEP CRYPT32.dll
+74920000 75c54000 SHELL32              /SafeSEH ON  /GS *ASLR *DEP SHELL32.dll
+75c60000 75ca3000 SECHOST              /SafeSEH ON  /GS *ASLR *DEP SECHOST.dll
+75cb0000 75d80000 KERNEL32             /SafeSEH ON  /GS *ASLR *DEP KERNEL32.dll
+75d80000 75dfc000 msvcp_win            /SafeSEH OFF /GS *ASLR *DEP msvcp_win.dll
+75e00000 75e14000 profapi              /SafeSEH ON  /GS *ASLR *DEP profapi.dll
+75e80000 75ede000 coml2                /SafeSEH ON  /GS *ASLR *DEP coml2.dll
+75ee0000 760b7000 KERNELBASE           /SafeSEH ON  /GS *ASLR *DEP KERNELBASE.dll
+760c0000 760f8000 CFGMGR32             /SafeSEH ON  /GS *ASLR *DEP CFGMGR32.dll
+76100000 76275000 USER32               /SafeSEH ON  /GS *ASLR *DEP USER32.dll
+76280000 763c4000 MSCTF                /SafeSEH ON  /GS *ASLR *DEP MSCTF.dll
+763d0000 76415000 POWRPROF             /SafeSEH ON  /GS *ASLR *DEP POWRPROF.dll
+76480000 764e6000 WS2_32               /SafeSEH ON  /GS *ASLR *DEP WS2_32.dll
+76580000 7658e000 MSASN1               NO_SEH       /GS *ASLR *DEP MSASN1.dll
+76590000 76b56000 Windows_Storage      /SafeSEH ON  /GS *ASLR *DEP Windows.Storage.dll
+76b60000 76b82000 GDI32                NO_SEH       /GS *ASLR *DEP GDI32.dll
+76b90000 76cef000 gdi32full            /SafeSEH ON  /GS *ASLR *DEP gdi32full.dll
+76d50000 76e24000 COMDLG32             /SafeSEH ON  /GS *ASLR *DEP COMDLG32.dll
+76e30000 76e87000 bcryptPrimitives     /SafeSEH OFF /GS *ASLR *DEP bcryptPrimitives.dll
+76e90000 76e9e000 AppCore              /SafeSEH OFF /GS *ASLR *DEP AppCore.dll
+76ea0000 7702c000 ntdll_76ea0000       /SafeSEH OFF /GS *ASLR *DEP ntdll.dll
+78800000 7895c000 MSXML5               /SafeSEH ON  /GS            MSXML5.dll
+3bd30000 3bf10000 ntdll                /SafeSEH OFF     *ASLR *DEP C:\Windows\SYSTEM32\ntdll.dll
+
+
+Windows 7 x86 - Office 2007 - WINWORD.EXE 
+=========================================
+2fd90000 2fde7000 WINWORD              /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office12\WINWORD.EXE
+3f100000 3f401000 MSGR3EN              /SafeSEH OFF                C:\Program Files\Common Files\Microsoft Shared\PROOF\1033\MSGR3EN.DLL
+62e70000 6384d000 MSOINTL              NO_SEH           *ASLR      C:\Program Files\Common Files\Microsoft Shared\office12\1033\MSOINTL.DLL
+63850000 64868000 mso                  /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\office12\mso.dll
+64e60000 64f37000 msonpdrv             /SafeSEH ON      *ASLR      C:\Windows\system32\spool\DRIVERS\W32X86\3\msonpdrv.dll
+64f40000 65594000 MSORES               NO_SEH           *ASLR      C:\Program Files\Common Files\Microsoft Shared\OFFICE12\MSORES.DLL
+655a0000 66320000 oart                 /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office12\oart.dll
+66320000 673cc000 wwlib                /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office12\wwlib.dll
+67b40000 67bf6000 msproof6             /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office12\msproof6.dll
+67d80000 67e07000 MSVCP80              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.4940_none_d08cc06a442b34fc\MSVCP80.dll
+67e10000 67f19000 riched20             /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\office12\riched20.dll
+67f20000 67f9d000 mscoreei             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscoreei.dll
+68320000 683da000 MSPTLS               /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\OFFICE12\MSPTLS.DLL
+683e0000 685f9000 AcGenral             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\AppPatch\AcGenral.DLL
+686c0000 68797000 wwintl               NO_SEH           *ASLR      C:\Program Files\Microsoft Office\Office12\1033\wwintl.dll
+69130000 69217000 DDRAW                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DDRAW.dll
+6b1f0000 6b269000 mscms                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\mscms.dll
+6b410000 6b48a000 AcSpecfc             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\AppPatch\AcSpecfc.DLL
+6df00000 6df2f000 shdocvw              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\shdocvw.dll
+6e040000 6e04d000 sfc_os               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\sfc_os.DLL
+6e0d0000 6e0d3000 sfc                  NO_SEH           *ASLR *DEP C:\Windows\system32\sfc.dll
+6ecc0000 6ed30000 ntshrui              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ntshrui.dll
+6edb0000 6edbb000 cscapi               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\cscapi.dll
+6ef00000 6ef09000 LINKINFO             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\LINKINFO.dll
+6f5f0000 6f5f5000 MSIMG32              NO_SEH           *ASLR *DEP C:\Windows\system32\MSIMG32.dll
+70000000 70004000 api_ms_win_downlevel_advapi32_l2_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-advapi32-l2-1-0.dll
+70260000 704a6000 msi                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\msi.dll
+705c0000 7065b000 MSVCR80              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.vc80.crt_1fc8b3b9a1e18e3b_8.0.50727.4940_none_d08cc06a442b34fc\MSVCR80.dll
+707f0000 70841000 Winspool             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\Winspool.DRV
+70a90000 70aa2000 MPR                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\MPR.dll
+70ad0000 70b54000 COMCTL32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc\COMCTL32.dll
+71f10000 71f5a000 mscoree              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\mscoree.dll
+724d0000 724e2000 msonpui              /SafeSEH ON      *ASLR      C:\Windows\system32\spool\DRIVERS\W32X86\3\msonpui.dll
+72670000 726a2000 WINMM                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WINMM.dll
+72b00000 72b0a000 MSOSTYLE             /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office12\MSOSTYLE.DLL
+72b10000 72b1f000 samcli               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\samcli.dll
+72bb0000 72bc4000 MSACM32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\MSACM32.dll
+72fa0000 72fb3000 dwmapi               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\dwmapi.dll
+73110000 73116000 DCIMAN32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DCIMAN32.dll
+73510000 7351a000 slc                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\slc.dll
+73770000 737b0000 UxTheme              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\UxTheme.dll
+737e0000 738d5000 propsys              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\propsys.dll
+73a60000 73bfe000 Comctl32_73a60000    /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\Comctl32.dll
+74080000 74089000 VERSION              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\VERSION.dll
+74190000 741b1000 ntmarta              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ntmarta.dll
+74500000 7453b000 rsaenh               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\rsaenh.dll
+74770000 74787000 CRYPTSP              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CRYPTSP.dll
+74980000 74999000 srvcli               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\srvcli.dll
+74a90000 74a98000 Secur32              NO_SEH           *ASLR *DEP C:\Windows\system32\Secur32.dll
+74bf0000 74c0b000 SspiCli              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SspiCli.dll
+74c10000 74c5c000 apphelp              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\apphelp.dll
+74c60000 74c6c000 CRYPTBASE            NO_SEH           *ASLR *DEP C:\Windows\system32\CRYPTBASE.dll
+74c70000 74ccf000 SXS                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SXS.DLL
+74cd0000 74cde000 RpcRtRemote          /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\RpcRtRemote.dll
+74d80000 74d8b000 profapi              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\profapi.dll
+74ec0000 74ec5000 api_ms_win_downlevel_advapi32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-advapi32-l1-1-0.dll
+74ed0000 74ed3000 api_ms_win_downlevel_normaliz_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-normaliz-l1-1-0.dll
+74ee0000 74ee4000 api_ms_win_downlevel_shlwapi_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+74ef0000 74f17000 CFGMGR32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CFGMGR32.dll
+74f20000 74f32000 DEVOBJ               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DEVOBJ.dll
+74f70000 74fbb000 KERNELBASE           /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\KERNELBASE.dll
+74fc0000 74fc4000 api_ms_win_downlevel_user32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-user32-l1-1-0.dll
+74fd0000 74fd4000 api_ms_win_downlevel_version_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-version-l1-1-0.dll
+75070000 75087000 USERENV              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USERENV.dll
+75090000 75094000 api_ms_win_downlevel_ole32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-ole32-l1-1-0.dll
+750a0000 750ee000 GDI32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\GDI32.dll
+750f0000 7518d000 USP10                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USP10.dll
+751a0000 751f7000 SHLWAPI              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SHLWAPI.dll
+75260000 75eac000 SHELL32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SHELL32.dll
+75eb0000 75ecf000 IMM32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\IMM32.dll
+75ed0000 75f71000 ADVAPI32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ADVAPI32.dll
+75f80000 75fc5000 WLDAP32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WLDAP32.dll
+75fd0000 7627b000 WININET              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WININET.dll
+76280000 76311000 OLEAUT32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\OLEAUT32.dll
+76320000 763f5000 kernel32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\kernel32.dll
+76400000 76483000 CLBCatQ              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CLBCatQ.DLL
+76490000 765db000 urlmon               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\urlmon.dll
+765e0000 7668c000 msvcrt               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\msvcrt.dll
+76690000 76732000 RPCRT4               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\RPCRT4.dll
+76740000 7689d000 ole32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ole32.dll
+768a0000 768d5000 WS2_32               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WS2_32.dll
+768e0000 769a9000 USER32               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USER32.dll
+769b0000 76be6000 iertutil             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\iertutil.dll
+76bf0000 76cbd000 MSCTF                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\MSCTF.dll
+76cc0000 76e5d000 SETUPAPI             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SETUPAPI.dll
+76e60000 76fa2000 ntdll                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\SYSTEM32\ntdll.dll
+76fb0000 76fb6000 NSI                  NO_SEH           *ASLR *DEP C:\Windows\system32\NSI.dll
+76fc0000 76fc3000 normaliz             NO_SEH           *ASLR *DEP C:\Windows\system32\normaliz.DLL
+76fd0000 7704b000 COMDLG32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\COMDLG32.dll
+77050000 77069000 sechost              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\SYSTEM32\sechost.dll
+77070000 7707a000 LPK                  NO_SEH           *ASLR *DEP C:\Windows\system32\LPK.dll
+78800000 7895c000 msxml5               /SafeSEH ON  /GS            C:\Program Files\Common Files\Microsoft Shared\OFFICE11\msxml5.dll
+
+
+Windows 7 x86 - Office 2010 - WINWORD.EXE
+=========================================
+
+2f4f0000 2f64d000 WINWORD              /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office14\WINWORD.EXE
+54ef0000 54fb1000 mxdwdrv              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\spool\DRIVERS\W32X86\3\mxdwdrv.dll
+54fc0000 55315000 Csi                  /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\OFFICE14\Csi.dll
+55320000 554b4000 OSPPCEXT             /SafeSEH ON  /GS *ASLR *DEP C:\Program Files\Common Files\Microsoft Shared\OfficeSoftwareProtectionPlatform\OSPPCEXT.DLL
+554c0000 5560f000 riched20             /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\office14\riched20.dll
+55610000 59b3a000 MSORES               NO_SEH           *ASLR      C:\Program Files\Common Files\Microsoft Shared\office14\MSORES.DLL
+59b40000 59da2000 MSOINTL              NO_SEH           *ASLR      C:\Program Files\Common Files\Microsoft Shared\office14\1033\MSOINTL.DLL
+59db0000 5af90000 mso                  /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\office14\mso.dll
+5af90000 5c322000 oart                 /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office14\oart.dll
+5c330000 5c4db000 gfx                  /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office14\gfx.dll
+5c4e0000 5d75a000 wwlib                /SafeSEH ON      *ASLR      C:\Program Files\Microsoft Office\Office14\wwlib.dll
+5d7a0000 5d85c000 MSPTLS               /SafeSEH ON      *ASLR      C:\Program Files\Common Files\Microsoft Shared\OFFICE14\MSPTLS.DLL
+5e400000 5ec64000 GrooveIntlResource   NO_SEH           *ASLR *DEP C:\PROGRA~1\MICROS~1\Office14\1033\GrooveIntlResource.dll
+65eb0000 662bb000 GROOVEEX             /SafeSEH ON      *ASLR *DEP C:\PROGRA~1\MICROS~1\Office14\GROOVEEX.DLL
+663a0000 6643e000 USP10_663a0000       /SafeSEH ON  /GS *ASLR *DEP C:\Program Files\Common Files\Microsoft Shared\OFFICE14\USP10.DLL
+66770000 6677f000 SendToOneNoteUI      /SafeSEH ON  /GS *ASLR      C:\Windows\system32\spool\DRIVERS\W32X86\3\SendToOneNoteUI.DLL
+66780000 6683a000 unidrvui             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\spool\DRIVERS\W32X86\3\unidrvui.dll
+669c0000 669f2000 IEAWSDC              /SafeSEH ON  /GS *ASLR      C:\Program Files\Microsoft Office\Office14\IEAWSDC.DLL
+66be0000 66ca9000 wwintl               NO_SEH           *ASLR      C:\Program Files\Microsoft Office\Office14\1033\wwintl.dll
+6a110000 6a134000 WinSCard             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WinSCard.dll
+6a390000 6a3c3000 sti                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\sti.dll
+6a610000 6aa1f000 office               NO_SEH           *ASLR      C:\Program Files\Common Files\Microsoft Shared\office14\Cultures\office.odf
+6abe0000 6ac00000 OSPPC                /SafeSEH ON  /GS *ASLR *DEP C:\Program Files\Common Files\Microsoft Shared\OfficeSoftwareProtectionPlatform\OSPPC.DLL
+6b4e0000 6b4eb000 wups                 /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\wups.dll
+6b6b0000 6b73e000 wuapi                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\wuapi.dll
+6bd40000 6bd44000 api_ms_win_downlevel_shlwapi_l2_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-shlwapi-l2-1-0.dll
+6c230000 6c2ad000 mscoreei             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscoreei.dll
+6c2b0000 6c2fa000 mscoree              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\mscoree.dll
+6d5e0000 6d632000 Rasapi32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\Rasapi32.DLL
+6e5e0000 6e5f5000 rasman               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\rasman.dll
+6e680000 6e7b7000 comsvcs              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\comsvcs.dll
+6e890000 6e898000 winrnr               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\winrnr.dll
+6e8a0000 6e8b2000 pnrpnsp              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\pnrpnsp.dll
+6eae0000 6eae6000 Sensapi              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\Sensapi.DLL
+6ed60000 6ed68000 npmproxy             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\npmproxy.dll
+6ed70000 6ed7d000 sfc_os               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\sfc_os.DLL
+6ed90000 6ed93000 SFC                  NO_SEH           *ASLR *DEP C:\Windows\system32\SFC.DLL
+6ef80000 6ef90000 napinsp              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\napinsp.dll
+6f5e0000 6f5f5000 FontSub              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\FontSub.dll
+6f6a0000 6f710000 ntshrui              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ntshrui.dll
+6f7d0000 6f7db000 CSCAPI               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CSCAPI.dll
+6f860000 6f869000 CSCDLL               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\CSCDLL.dll
+6f920000 6f98a000 cscui                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\cscui.dll
+6f990000 6f9ea000 netprofm             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\netprofm.dll
+6f9f0000 6fa21000 EhStorShell          /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\EhStorShell.dll
+70080000 70085000 MSIMG32              NO_SEH           *ASLR *DEP C:\Windows\system32\MSIMG32.dll
+70320000 70324000 api_ms_win_downlevel_advapi32_l2_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-advapi32-l2-1-0.dll
+70760000 708b7000 msxml6               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\msxml6.dll
+70ea0000 70ef1000 Winspool             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\Winspool.DRV
+71120000 71126000 rasadhlp             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\rasadhlp.dll
+71180000 71204000 Comctl32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.7601.18837_none_ec86b8d6858ec0bc\Comctl32.dll
+71d80000 71fc6000 msi                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\msi.dll
+72530000 72545000 Cabinet              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\Cabinet.dll
+72c10000 72c60000 webio                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\webio.dll
+72c60000 72cb8000 WINHTTP              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WINHTTP.dll
+72d30000 72d4d000 cryptnet             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\cryptnet.dll
+72f30000 72f3d000 rtutils              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\rtutils.dll
+73110000 73117000 wiatrace             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\wiatrace.dll
+73120000 7314b000 ATL90                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.vc90.atl_1fc8b3b9a1e18e3b_9.0.30729.6161_none_51cd0a7abbe4e19b\ATL90.DLL
+731e0000 73311000 WindowsCodecs        /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WindowsCodecs.dll
+734c0000 734d2000 dhcpcsvc             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\dhcpcsvc.DLL
+73510000 7351d000 dhcpcsvc6            /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\dhcpcsvc6.DLL
+73580000 73593000 DwmApi               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DwmApi.DLL
+735f0000 73628000 fwpuclnt             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\fwpuclnt.dll
+73680000 73687000 WINNSI               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WINNSI.DLL
+736c0000 736dc000 IPHLPAPI             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\IPHLPAPI.DLL
+73790000 7379d000 WTSAPI32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WTSAPI32.dll
+737a0000 737aa000 slc                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\slc.dll
+73800000 73991000 GdiPlus              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.23894_none_5c0be957a009922e\GdiPlus.dll
+739a0000 739b0000 nlaapi               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\nlaapi.dll
+73b10000 73b50000 UxTheme              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\UxTheme.DLL
+73b70000 73b84000 ATL                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ATL.DLL
+73d70000 73f0e000 Comctl32_73d70000    /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\Comctl32.dll
+74010000 74105000 propsys              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\propsys.dll
+74650000 74659000 VERSION              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\VERSION.dll
+746e0000 746e5000 wshtcpip             NO_SEH           *ASLR *DEP C:\Windows\System32\wshtcpip.dll
+74760000 74781000 ntmarta              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ntmarta.dll
+74790000 7481e000 MSVCP90              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCP90.dll
+74830000 748d3000 MSVCR90              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCR90.dll
+74900000 74916000 GPAPI                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\GPAPI.dll
+749c0000 749fd000 bcryptprimitives     /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\bcryptprimitives.dll
+74aa0000 74aa8000 credssp              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\credssp.dll
+74ab0000 74abe000 DEVRTL               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DEVRTL.dll
+74ac0000 74afb000 rsaenh               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\rsaenh.dll
+74b10000 74b51000 schannel             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\schannel.DLL
+74b90000 74bd4000 DNSAPI               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DNSAPI.dll
+74cc0000 74cfc000 mswsock              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\mswsock.dll
+74d00000 74d17000 CRYPTSP              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CRYPTSP.dll
+74e40000 74e57000 bcrypt               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\System32\bcrypt.dll
+74e60000 74e99000 ncrypt               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ncrypt.dll
+74f10000 74f16000 wship6               NO_SEH           *ASLR *DEP C:\Windows\System32\wship6.dll
+74f50000 74f69000 srvcli               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\srvcli.dll
+75060000 75068000 Secur32              NO_SEH           *ASLR *DEP C:\Windows\system32\Secur32.dll
+751c0000 751db000 SSPICLI              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SSPICLI.DLL
+751e0000 7522c000 apphelp              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\apphelp.dll
+75230000 7523c000 CRYPTBASE            NO_SEH           *ASLR *DEP C:\Windows\system32\CRYPTBASE.dll
+75240000 7529f000 SXS                  /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SXS.DLL
+752a0000 752ae000 RpcRtRemote          /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\RpcRtRemote.dll
+75340000 7534b000 profapi              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\profapi.dll
+75350000 7535c000 MSASN1               NO_SEH           *ASLR *DEP C:\Windows\system32\MSASN1.dll
+75360000 7538f000 WINTRUST             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WINTRUST.dll
+75390000 75394000 api_ms_win_downlevel_user32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-user32-l1-1-0.dll
+753a0000 753a4000 api_ms_win_downlevel_version_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-version-l1-1-0.dll
+753b0000 754d2000 CRYPT32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CRYPT32.dll
+754e0000 754e5000 api_ms_win_downlevel_advapi32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-advapi32-l1-1-0.dll
+754f0000 754f3000 api_ms_win_downlevel_normaliz_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-normaliz-l1-1-0.dll
+75500000 75517000 USERENV              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USERENV.dll
+755b0000 755b4000 api_ms_win_downlevel_ole32_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-ole32-l1-1-0.dll
+755c0000 755e7000 CFGMGR32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CFGMGR32.dll
+755f0000 75602000 DEVOBJ               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\DEVOBJ.dll
+75610000 75614000 api_ms_win_downlevel_shlwapi_l1_1_0 NO_SEH           *ASLR *DEP C:\Windows\system32\api-ms-win-downlevel-shlwapi-l1-1-0.dll
+75620000 7566b000 KERNELBASE           /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\KERNELBASE.dll
+75670000 7580d000 SETUPAPI             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SETUPAPI.dll
+75840000 75845000 PSAPI                NO_SEH           *ASLR *DEP C:\Windows\system32\PSAPI.DLL
+75850000 7585a000 LPK                  NO_SEH           *ASLR *DEP C:\Windows\system32\LPK.dll
+75860000 75879000 sechost              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\SYSTEM32\sechost.dll
+75880000 764cc000 SHELL32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SHELL32.dll
+764d0000 76553000 CLBCatQ              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\CLBCatQ.DLL
+76560000 7660c000 msvcrt               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\msvcrt.dll
+76610000 766b1000 ADVAPI32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ADVAPI32.dll
+766c0000 7696b000 WININET              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WININET.dll
+76970000 76ba6000 iertutil             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\iertutil.dll
+76bb0000 76bf5000 WLDAP32              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WLDAP32.dll
+76c00000 76c9d000 USP10                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USP10.dll
+76ca0000 76d31000 OLEAUT32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\OLEAUT32.dll
+76d40000 76d43000 normaliz             NO_SEH           *ASLR *DEP C:\Windows\system32\normaliz.DLL
+76db0000 76e7d000 MSCTF                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\MSCTF.dll
+76e80000 76ed7000 SHLWAPI              /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\SHLWAPI.dll
+76ee0000 76f2e000 GDI32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\GDI32.dll
+76f30000 77005000 kernel32             /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\kernel32.dll
+77010000 770b2000 RPCRT4               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\RPCRT4.dll
+770c0000 770f5000 WS2_32               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\WS2_32.dll
+77180000 772cb000 urlmon               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\urlmon.dll
+772d0000 7742d000 ole32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\ole32.dll
+77430000 77572000 ntdll                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\SYSTEM32\ntdll.dll
+77580000 77586000 NSI                  NO_SEH           *ASLR *DEP C:\Windows\system32\NSI.dll
+77590000 775af000 IMM32                /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\IMM32.DLL
+775b0000 77679000 USER32               /SafeSEH ON  /GS *ASLR *DEP C:\Windows\system32\USER32.dll
+
+Unloaded modules:
+742a0000 742a0000 POWRPROF.DLL        
+75670000 7580d000 SETUPAPI.dll        
+755f0000 75602000 DEVOBJ.dll          
+755c0000 755e7000 CFGMGR32.dll        
+739a0000 739b0000 NLAapi.dll          
+6ef80000 6ef90000 napinsp.dll         
+6e8a0000 6e8b2000 pnrpnsp.dll         
+74cc0000 74cfc000 mswsock.dll         
+6e890000 6e898000 winrnr.dll          
+72c60000 72cb8000 winhttp.dll         
+72c10000 72c60000 webio.dll           
+6b740000 6b740000 wups.dll            
+6b740000 6b740000 wu.upgrade.ps.dll   
+6f5e0000 6f5f5000 FontSub.dll         
+6f5e0000 6f5f5000 FontSub.dll        

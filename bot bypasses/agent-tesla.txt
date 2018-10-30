@@ -1,6 +1,6 @@
 # Agent Tesla Exploit By Yattaze
 import requests, base64
-HOST = "http://benplattfan.com/WebPanel/"
+HOST = ""
 EXPLOIT_PATH = "/server_side/scripts/server_processing.php"
 URL = HOST + EXPLOIT_PATH
 

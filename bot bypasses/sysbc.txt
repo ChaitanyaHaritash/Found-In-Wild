@@ -3,7 +3,7 @@ import requests,re
 #main page
 url="http://google.com/panel/"
 
-passw="adm443"
+passw="password"
 uri_all="/password.php?offline=0"
 print "systembc loader url fetcher\n"
 

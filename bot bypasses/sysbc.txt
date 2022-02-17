@@ -4,14 +4,16 @@ import requests,re
 url="http://google.com/panel/"
 
 passw="password"
-uri_all="/password.php?offline=0"
-print "systembc loader url fetcher\n"
+uri_all="/password.php?offline=0" #1/0
+print "systembc loader\n"
 
 k=[]
 #regex for getting ports
 regex= r"[0-9]+(?:\.[0-9]+){3}:[0-9]+"
 #url to hosted binary
 regexloader_url=r"<b>(http|https)://.*.(exe|dll)"
+#regex for Victim Info
+regexVicIP=r"<b>[0-9]+(?:\.[0-9]+){3}</b>"
 
 url1=url+uri_all
 scrap = requests.post(url1, data={'pass':passw}).text
@@ -20,12 +22,16 @@ n= re.findall(regex,scrap)
 for i in n:
         k.append(i.decode("utf-8"))
 
-
+def find_victim(scrap):
+        n = re.findall(regexVicIP,scrap)
+        for i in n:
+                print i.replace("<b>","").replace("</b>","")
 def get_loaded_url(url):
         l=[]
         g=[]
         for i in k:
                 l.append(i.split(":")[1])
+        #url=url+uri_loader
         print "[+] Getting Loaded URLs"
         for o in l:
                  g.append(url+"password.php?loader="+o+"&offline=0")
@@ -35,4 +41,5 @@ def get_loaded_url(url):
                 scrap = requests.get(h,cookies={"pass":passw}).text
                 n = re.findall(regexloader_url,scrap)
                 print n
-get_loaded_url(url)
+#get_loaded_url(url)
+#find_victim(scrap)

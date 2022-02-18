@@ -1,0 +1,4 @@
+# SystemBC - Authenticated Stored XSS 0day 
+http://<panel>/password.php?comment=127.0.0.1&offline=1&
+* Add js payload
+* Submit

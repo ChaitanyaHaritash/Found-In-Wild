@@ -1,22 +1,25 @@
 import requests,re 
 
 #main page
-url="http://google.com/panel/"
+url="http://google.com"
 
-passw="password"
+passw=""
 uri_all="/password.php?offline=0" #1/0
+
 print "systembc loader\n"
+
+proxies = {'http':'socks5://127.0.0.1:9100'} #'https':'socks5://127.0.0.1:9100'}
 
 k=[]
 #regex for getting ports
 regex= r"[0-9]+(?:\.[0-9]+){3}:[0-9]+"
 #url to hosted binary
-regexloader_url=r"<b>(http|https)://.*.(exe|dll)"
+regexloader_url=r"<b>(http|https)://.*.(exe|dll|bat|ps1|cmd)"
 #regex for Victim Info
 regexVicIP=r"<b>[0-9]+(?:\.[0-9]+){3}</b>"
 
 url1=url+uri_all
-scrap = requests.post(url1, data={'pass':passw}).text
+scrap = requests.post(url1, data={'pass':passw}, proxies=proxies).text
 
 n= re.findall(regex,scrap)
 for i in n:
@@ -38,8 +41,9 @@ def get_loaded_url(url):
 
         for h in g:
                 print "[!] {0}".format(h)
-                scrap = requests.get(h,cookies={"pass":passw}).text
-                n = re.findall(regexloader_url,scrap)
-                print n
+                scrap = requests.get(h,cookies={"pass":passw},proxies=proxies).text
+                for pp in re.finditer(regexloader_url,scrap):
+      print "    --- > Landing URL/s : %s " % pp.group(0).replace("<b>","") 
+                #print n
 #get_loaded_url(url)
 #find_victim(scrap)

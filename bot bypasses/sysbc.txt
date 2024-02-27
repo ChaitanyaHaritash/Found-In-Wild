@@ -1,5 +1,7 @@
 import requests,re 
 
+#NOTE: only find_victim is working to scrap victims details but get_loaded_url does not work anymore. Please update the code as per your use-case, i wont be maintaining it anymore.
+
 #main page
 url="http://google.com"
 
